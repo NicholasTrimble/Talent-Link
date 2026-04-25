@@ -2,5 +2,10 @@
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
   </Folder>
+  <Project Path="AngularFrontEnd/angularfrontend.client/angularfrontend.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="AngularFrontEnd/AngularFrontEnd.Server/AngularFrontEnd.Server.csproj" Id="e9bb5b18-a2c3-41fe-a164-294a9c39ff7f" />
   <Project Path="API/API.csproj" />
 </Solution>
