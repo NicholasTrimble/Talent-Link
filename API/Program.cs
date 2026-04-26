@@ -11,22 +11,20 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
  opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAngular", policy =>
-    {
-        policy.WithOrigins("http://localhost:64657")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
-});
+//addcors to allow localhost to run together.
+builder.Services.AddCors();
+
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.MapControllers();
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200"));
+
 app.UseHttpsRedirection();
-app.UseCors("AllowAngular");
+app.MapControllers();
+
+
+
 
 
 app.Run();

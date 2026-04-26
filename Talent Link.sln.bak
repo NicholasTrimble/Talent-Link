@@ -3,7 +3,7 @@
     <File Path=".gitignore" />
   </Folder>
   <Project Path="API/API.csproj" />
-  <Project Path="client/" Type="Website" DisplayName="client">
+  
     <BuildType Project="Debug" />
     <Properties Name="WebsiteProperties">
       <Property Name="Debug.AspNetCompiler.Debug" Value="&quot;True&quot;" />
