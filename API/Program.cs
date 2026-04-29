@@ -1,5 +1,7 @@
 using API.Data;
 using Microsoft.EntityFrameworkCore;
+using API.Interfaces;
+using API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 
 //addcors to allow localhost to run together.
 builder.Services.AddCors();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 
 var app = builder.Build();
